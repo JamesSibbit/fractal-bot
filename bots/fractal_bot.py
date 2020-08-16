@@ -13,7 +13,7 @@ def tweet():
         print("Built fractal")
         message = "Julia fractal with c = "+str(round(cx, ndigits = 2))+" + "+str(round(cy, ndigits = 2))+"i"
         try:
-            api.PostUpdate(message, media=file_path)
+            api.update_with_media(file_path, status=message)
             print("Tweet successful!")
             os.remove(file_path)
         except Exception as exc:
