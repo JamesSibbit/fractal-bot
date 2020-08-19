@@ -6,6 +6,7 @@ from julia import save_julia
 
 def tweet():
     api = con_api()
+    i = 0
     while True:
         cx = -random.uniform(0.001,0.2)
         cy = random.uniform(0.63,0.75)
@@ -19,6 +20,11 @@ def tweet():
         except Exception as exc:
             print("Tweet didn't work :(")
             raise exc
-        sleep(3600)
+        if i%2==0:
+            sleep(50400)
+            i+=1
+        else:
+            sleep(36000)
+            i-=1
 
 tweet()
